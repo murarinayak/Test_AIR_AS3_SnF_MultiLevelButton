@@ -34,7 +34,7 @@ package com.murari.components
 		
 		override protected function button_touchHandler(event:TouchEvent):void
 		{
-			if (_childButton.visible)
+			//if (_childButton.visible)
 			{
 				if (this.touchPointID >= 0)
 				{
@@ -50,17 +50,15 @@ package com.murari.components
 					
 					if (this.hitTest(HELPER_POINT, true))  
 					{
-						///trace("Button Pressed");
+						trace("Button Pressed");
+						this.resetTouchState(touch);
 					}
 					else
 						super.button_touchHandler(event);
 				}
 				else super.button_touchHandler(event);
 			}
-			else
-			{
-				super.button_touchHandler(event);
-			}
+			//else			{				super.button_touchHandler(event);			}
 		}
 		
 		override protected function draw():void
